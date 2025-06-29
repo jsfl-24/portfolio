@@ -7,9 +7,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],       // default font
-        jersey: ['"Jersey 25"', 'cursive'],    // accent/decorative font
+        sans: ['Poppins', 'sans-serif'],
+        jersey: ['"Jersey 25"', 'cursive'],
+        poppins: ['Poppins', 'sans-serif'],
       },
+      colors: {
+        primary: '#ffffff',
+        secondary: '#000000',
+      },
+      fontWeight: {
+        'extralight': '200',
+      }
     },
   },
   plugins: [],

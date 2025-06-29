@@ -1,5 +1,5 @@
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Poppins:wght@400;600;700&display=swap');
+/* Import fonts with ExtraLight weight */
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Poppins:wght@200;400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -32,6 +32,11 @@
 
 .font-poppins {
   font-family: 'Poppins', sans-serif;
+}
+
+.font-poppins-extralight {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
 }
 
 /* Color Utility Classes */
