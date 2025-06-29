@@ -4,7 +4,7 @@ import Hero from './components/Hero.vue'
 </script>
 
 <template>
-  <div class="app">
+  <div class="app bg-primary min-h-screen font-poppins">
     <Header />
     <Hero />
   </div>
