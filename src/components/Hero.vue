@@ -5,8 +5,6 @@
                 <h1 class="absolute left-[84px] top-[478px] text-[180px] font-jersey text-secondary">
                     WELCOME<span style="color: red;">!</span>
                 </h1>
-                <!-- Full width line positioning -->
-                <div class="absolute left-0 right-0 top-[787px] h-[2px] bg-secondary w-full"></div>
             </section>
             <section class="absolute top-[-63px] left-[0px] right-[1354px]">
                 <svg width="87" height="502" viewBox="0 0 87 502" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +23,10 @@
                 </p>
             </section>
         </div>
+
+        <!-- Horizontal line positioned closer to WELCOME text -->
+        <div class="absolute left-0 right-[92px] top-[437px] h-[2px] z-20"
+            style="width: calc(100% - 100px); background-color: black;"></div>
     </section>
 </template>
 
