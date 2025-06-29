@@ -9,9 +9,16 @@
                 <!-- Full width line positioning -->
                 <div class="absolute left-0 right-0 top-[787px] h-[2px] bg-secondary w-full"></div>
             </section>
-        
+            <section class="absolute top-[-63px] left-[0px] right-[1354px] ">
+                <svg width="87" height="502" viewBox="0 0 87 502" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M0.5 1C38.0052 32.3067 106.586 130.764 80.8684 274.14C55.1505 417.515 70.1526 485.12 80.8684 501"
+                        stroke="black"></path>
+                </svg>
+            </section>
         </div>
-        </section>
+    </section>
 </template>
 
 <script>
