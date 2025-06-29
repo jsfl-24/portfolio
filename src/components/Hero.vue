@@ -1,19 +1,13 @@
 <template>
-    <section class="hero relative w-full h-screen" style="background-color:     white; min-height: 100vh;">
-        <div class="absolute top-[40px] left-[55px] text-[32px] z-10 text-white" style="font-family: 'Jersey 25', cursive;">jsfl</div>
-        
-        
-        <!-- Top Right Box with hamburger menu -->
-        <div class="absolute top-0 left-0 w-[100px] h-[100px] z-20 flex flex-col justify-center items-center gap-2" style="background-color: black;">
-            <div class="w-8 h-0.5" style="background-color: black;"></div>
-            <div class="w-8 h-0.5" style="background-color: white;"></div>
+    <section class="hero relative w-full h-screen bg-white">
+        <div class="flex items-center justify-center h-full">
+            <div class="text-center">
+                <h1 class="text-6xl font-bold mb-4">Welcome</h1>
+                <p class="text-xl text-gray-600">Portfolio Hero Section</p>
+            </div>
         </div>
-        
-        <div class="absolute bottom-0 left-0 w-[100px] h-[100px] z-20" style="background-color: black;"></div>
-        <div class="absolute bottom-0 right-0 w-[100px] h-[100px] z-20" style="background-color: black;"></div>
     </section>
 </template>
-
 
 <script>
 export default {
