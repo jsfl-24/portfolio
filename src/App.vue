@@ -7,7 +7,7 @@ import Menu from './components/Menu.vue'
 <template>
   <div class="app bg-primary min-h-screen font-poppins">
     <Header />
-    <Menu />
+    
     <Hero />
     
   </div>

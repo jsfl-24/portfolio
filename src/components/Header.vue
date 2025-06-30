@@ -6,15 +6,16 @@
         <!-- Navigation Menu - Top Right with hover functionality -->
         <nav class="fixed top-[0px] right-[0px] z-50" @mouseenter="showMenu = true" @mouseleave="showMenu = false">
             <div @click="toggleMenu"
-                class="cursor-pointer w-[100px] h-[100px] bg-secondary flex items-center justify-center">
+                class="cursor-pointer w-[100px] h-[100px] flex items-center justify-center transition-all duration-300"
+                :class="showMenu ? 'bg-primary' : 'bg-secondary'">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
-                    <rect width="100" height="100" fill="black" />
-                    <line x1="43" y1="54" x2="67" y2="54" stroke="white" stroke-width="2" />
-                    <line x1="34" y1="44" x2="67" y2="44" stroke="white" stroke-width="2" />
+                    <rect width="100" height="100" :fill="showMenu ? 'white' : 'black'" />
+                    <line x1="43" y1="54" x2="67" y2="54" :stroke="showMenu ? 'black' : 'white'" stroke-width="2" />
+                    <line x1="34" y1="44" x2="67" y2="44" :stroke="showMenu ? 'black' : 'white'" stroke-width="2" />
                 </svg>
             </div>
 
-            <!-- Overlay Menu Component -->
+            <!-- Overlay Menu Component - positioned at top-right -->
             <transition name="slide-left">
                 <Menu v-if="showMenu" class="absolute top-0 right-[100px]" />
             </transition>
