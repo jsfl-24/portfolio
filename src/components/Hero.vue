@@ -7,11 +7,10 @@
                 </h1>
             </section>
             <section class="absolute top-[-63px] left-[0px] right-[1354px]">
-                <svg width="87" height="502" viewBox="0 0 87 502" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="88" height="502" viewBox="0 0 88 502" fill="none">
                     <path
-                        d="M0.5 1C38.0052 32.3067 106.586 130.764 80.8684 274.14C55.1505 417.515 70.1526 485.12 80.8684 501"
-                        stroke="black"></path>
+                        d="M1 1C38.5052 32.3067 107.086 130.764 81.3684 274.14C55.6505 417.515 70.6526 485.12 81.3684 501"
+                        stroke="black" />
                 </svg>
             </section>
             <section class="absolute top-[500px] bottom-[174px] left-[885px] right-[122px]">

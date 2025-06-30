@@ -3,31 +3,62 @@
         <!-- Logo/Brand text - Top Left -->
         <div class="absolute top-[25px] left-[55px] text-[32px] z-10 font-jersey text-secondary">jsfl</div>
 
-        <!-- Navigation Menu - Top Right (moved to top edge) -->
-        <nav class="fixed top-[0px] right-[0px] z-50">
+        <!-- Navigation Menu - Top Right with hover functionality -->
+        <nav class="fixed top-[0px] right-[0px] z-50" @mouseenter="showMenu = true" @mouseleave="showMenu = false">
             <div @click="toggleMenu"
                 class="cursor-pointer w-[100px] h-[100px] bg-secondary flex items-center justify-center">
-                <img src="../assets/menu.svg" alt="Menu" class="w-8 h-8" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                    <rect width="100" height="100" fill="black" />
+                    <line x1="43" y1="54" x2="67" y2="54" stroke="white" stroke-width="2" />
+                    <line x1="34" y1="44" x2="67" y2="44" stroke="white" stroke-width="2" />
+                </svg>
             </div>
+
+            <!-- Overlay Menu Component -->
+            <transition name="slide-left">
+                <Menu v-if="showMenu" class="absolute top-0 right-[100px]" />
+            </transition>
         </nav>
     </header>
 
-    <!-- Vertical line - 106px from right, FULL SCREEN HEIGHT -->
+    <!-- Vertical line - 100px from right, FULL SCREEN HEIGHT -->
     <div class="fixed z-40"
         style="right: 100px; top: 0px; bottom: 0px; width: 2px; height: 100vh; background-color: black;"></div>
 </template>
 
 <script>
+import Menu from './Menu.vue'
+
 export default {
     name: 'Header',
+    components: {
+        Menu
+    },
+    data() {
+        return {
+            showMenu: false
+        }
+    },
     methods: {
         toggleMenu() {
-            console.log('Menu toggled');
+            this.showMenu = !this.showMenu
+            console.log('Menu toggled', this.showMenu);
         }
     }
 }
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+<style scoped>
+.slide-left-enter-active,
+.slide-left-leave-active {
+    transition: transform 0.3s ease;
+}
+
+.slide-left-enter-from {
+    transform: translateX(100%);
+}
+
+.slide-left-leave-to {
+    transform: translateX(100%);
+}
 </style>
