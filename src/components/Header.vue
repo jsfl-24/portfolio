@@ -15,12 +15,19 @@
                 </svg>
             </div>
 
+
             <!-- Overlay Menu Component - positioned at top-right -->
             <transition name="slide-left">
                 <Menu v-if="showMenu" class="absolute top-0 right-[100px]" />
             </transition>
         </nav>
     </header>
+    <!-- Arrow positioned directly below the SVG button -->
+    <div class="absolute top-[890px] right-[0px] w-[100px] h-[40px] flex items-center justify-center cursor-pointer"
+        @click="onArrowIconClick">
+        <img src="../assets/Arrow 1.svg" alt="down arrow"
+            class="w-[24px] h-[24px] transition-transform duration-300 transform hover:scale-110" />
+    </div>
 
     <!-- Vertical line - 100px from right, FULL SCREEN HEIGHT -->
     <div class="fixed z-40"
@@ -44,6 +51,10 @@ export default {
         toggleMenu() {
             this.showMenu = !this.showMenu
             console.log('Menu toggled', this.showMenu);
+        },
+        onArrowIconClick() {
+            console.log('Arrow clicked');
+            // Add scroll down or navigation logic here
         }
     }
 }

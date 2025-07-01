@@ -27,6 +27,7 @@
         <div class="absolute left-0 right-[92px] top-[437px] h-[2px] z-20"
             style="width: calc(100% - 100px); background-color: black;"></div>
     </section>
+    
 </template>
 
 <script>
