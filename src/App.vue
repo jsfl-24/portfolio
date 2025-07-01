@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
-import Menu from './components/Menu.vue'
 </script>
 
 <template>
-  <div class="app bg-primary min-h-screen font-poppins">
-    <Header />
-    
+  <div class="app bg-primary min-h-screen font-poppins" id="app">
     <Hero />
-    
   </div>
 </template>
