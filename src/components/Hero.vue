@@ -13,14 +13,14 @@
                 </svg>
             </section>
             <!-- Main content section -->
-            <section class="relative h-[1200px] w-full bg-gray-100">
+            <section>
                 <!-- Tagline above WELCOME -->
-                <div class="absolute left-[92px] top-[790px] bottom-[536px] text-secondary"
+                <div class="absolute left-[92px] top-[448px] bottom-[536px] text-secondary"
                     style="font-family: 'Poppins', sans-serif; font-weight: 200; font-size: 20px;">
                     LETS DESIGN, DEVELOP, RELAX;
                 </div>
 
-                <h1 class="absolute left-[84px] top-[630px] text-[180px] font-jersey text-secondary">
+                <h1 class="absolute left-[84px] top-[280px] text-[180px] font-jersey text-secondary">
                     WELCOME<span style="color: red;">!</span>
                 </h1>
             </section>
