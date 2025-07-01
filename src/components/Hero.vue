@@ -1,5 +1,5 @@
 <template>
-    <section class="relative h-[500px] bg-primary">
+    <section class="relative h-screen bg-primary">
         <!-- Logo/Brand text - Top Left -->
         <div class="absolute top-[25px] left-[55px] text-[32px] z-10 font-jersey text-secondary">jsfl</div>
 

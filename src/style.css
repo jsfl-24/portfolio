@@ -34,6 +34,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.font-poppins-regular {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
 .font-poppins-extralight {
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
