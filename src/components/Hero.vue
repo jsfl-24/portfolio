@@ -1,7 +1,7 @@
 <template>
     <section class="relative h-[500px] bg-primary">
         <!-- Logo/Brand text - Top Left -->
-        <div class="absolute top-[25px] left-[40px] text-[30px] z-10 font-jersey text-secondary">jsfl</div>
+        <div class="absolute top-[25px] left-[55px] text-[32px] z-10 font-jersey text-secondary">jsfl</div>
 
         <div class="flex items-center justify-center h-full">
             <!--svg line   -->
@@ -14,6 +14,12 @@
             </section>
             <!-- Main content section -->
             <section class="relative h-[1200px] w-full bg-gray-100">
+                <!-- Tagline above WELCOME -->
+                <div class="absolute left-[92px] top-[790px] bottom-[536px] text-secondary"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 200; font-size: 20px;">
+                    LETS DESIGN, DEVELOP, RELAX;
+                </div>
+
                 <h1 class="absolute left-[84px] top-[630px] text-[180px] font-jersey text-secondary">
                     WELCOME<span style="color: red;">!</span>
                 </h1>
@@ -38,10 +44,10 @@
         style="right: 100px; top: 0px; bottom: 0px; width: 2px; height: 100vh; background-color: black;"></div>
 
     <!-- Vertical line above arrow - 100px length, 50px above arrow -->
-    <div class="fixed bottom-[45px] right-[50px] w-[2px] rotate-90 h-[100px] bg-secondary z-30"></div>
+    <div class="fixed bottom-[45px] right-[50px] w-[2px] h-[100px] rotate-90 bg-secondary z-30"></div>
 
     <!-- Arrow positioned at bottom of page - 50px from right -->
-    <div class="fixed bottom-[28px] right-[3px] w-[100px] h-[40px] flex items-center justify-center cursor-pointer z-30"
+    <div class="fixed bottom-[20px] right-[0px] w-[100px] h-[40px] flex items-center justify-center cursor-pointer z-30"
         @click="onArrowIconClick">
         <img src="../assets/Arrow 1.svg" alt="down arrow"
             class="w-[24px] h-[24px] transition-transform duration-300 transform hover:scale-110" />
@@ -49,12 +55,22 @@
 </template>
 
 <script>
+import { inject } from 'vue'
+
 export default {
     name: 'Hero',
-    methods: {
-        onArrowIconClick() {
-            console.log('Arrow clicked - scroll to top or next section');
-            // Add scroll to top or next section logic here
+    setup() {
+        const scrollToAbout = inject('scrollToAbout')
+
+        const onArrowIconClick = () => {
+            console.log('Arrow clicked - scrolling to About section');
+            if (scrollToAbout) {
+                scrollToAbout()
+            }
+        }
+
+        return {
+            onArrowIconClick
         }
     }
 }
