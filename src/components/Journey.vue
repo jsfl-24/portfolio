@@ -1,16 +1,16 @@
 <template>
     <section class="relative h-screen bg-primary">
         <!-- Left Side Brand Panel -->
-        <div class="absolute w-[55px] h-[200px] bg-secondary left-[-8px] right-[1365px] top-[412px] bottom-[412px]">
-            <div class="absolute top-[20px] left-[20px] right-[19px] bottom-[156px] font-jersey" style="color: red;">J</div>
+        <div class="absolute w-[55px] h-[200px] bg-secondary left-[-8px] right-[1365px] top-[412px] font-jersey bottom-[412px]">
+            <div class="absolute top-[20px] left-[20px] right-[19px] bottom-[156px]" style="color: red;">J</div>
             <div
                 class="absolute top-[148px] left-[14px] right-[24px] bottom-[20px] font-jersey text-[20px] text-primary rotate-270">
                 journey</div>
         </div>
 
         <!-- Journey Content -->
-        <div class="absolute top-[150px] left-[200px] right-[200px]">
-            <h2 class="text-[70px] font-jersey text-secondary mb-8">My <span style="color: red;">Journey</span></h2>
+        <div class="absolute top-[100px] left-[160px] right-[200px]">
+            <h2 class="text-[70px] font-jersey text-secondary mb-8">My <span style="color: red; text-decoration: underline;">Journey</span></h2>
             <div class="space-y-8">
                 <!-- Journey Item 1 -->
                 <div class="flex items-start space-x-6">
