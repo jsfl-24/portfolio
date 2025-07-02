@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Hero from './components/Hero.vue'
 import About from './components/About.vue'
-
+import Journey from './components/Journey.vue'
 // Scroll to About section function
 const scrollToAbout = () => {
   const aboutSection = document.getElementById('about-section');
@@ -23,6 +23,9 @@ provide('scrollToAbout', scrollToAbout)
     <Hero />
     <div id="about-section">
       <About />
+    </div>
+    <div id="journey-section">
+      <Journey />
     </div>
   </div>
 </template>
