@@ -48,3 +48,24 @@
         </div>
     </section>
 </template>
+<script>
+import { inject } from 'vue'
+
+export default {
+    name: 'About',
+    setup() {
+        const scrollToNext = inject('scrollToNext')
+        
+        const onArrowIconClick = () => {
+            console.log('About arrow clicked');
+            if (scrollToNext) {
+                scrollToNext()
+            }
+        }
+
+        return {
+            onArrowIconClick
+        }
+    }
+}
+</script>

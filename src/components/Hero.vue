@@ -68,12 +68,12 @@ import { inject } from 'vue'
 export default {
     name: 'Hero',
     setup() {
-        const scrollToAbout = inject('scrollToAbout')
-
+        const scrollToNext = inject('scrollToNext')
+        
         const onArrowIconClick = () => {
-            console.log('Arrow clicked - scrolling to About section');
-            if (scrollToAbout) {
-                scrollToAbout()
+            console.log('Hero arrow clicked');
+            if (scrollToNext) {
+                scrollToNext()
             }
         }
 
@@ -83,7 +83,6 @@ export default {
     }
 }
 </script>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 

@@ -2,10 +2,7 @@
 import Hero from './components/Hero.vue'
 import About from './components/About.vue'
 import Journey from './components/Journey.vue'
-import { provide, ref, onMounted } from 'vue'
-
-// Current section tracking
-const currentSection = ref('hero')
+import { provide } from 'vue'
 
 // Scroll to About section function
 const scrollToAbout = () => {
@@ -29,40 +26,28 @@ const scrollToJourney = () => {
   }
 }
 
-// Scroll to Hero section function
-const scrollToHero = () => {
-  const heroSection = document.getElementById('hero-section');
-  if (heroSection) {
-    heroSection.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  }
-}
-
-// Smart scroll function - scrolls to next section based on current position
+// Smart scroll function - detects current section and scrolls to next
 const scrollToNext = () => {
   const heroSection = document.getElementById('hero-section');
   const aboutSection = document.getElementById('about-section');
-  const journeySection = document.getElementById('journey-section');
 
-  if (heroSection && aboutSection && journeySection) {
+  if (heroSection && aboutSection) {
     const heroRect = heroSection.getBoundingClientRect();
     const aboutRect = aboutSection.getBoundingClientRect();
-    const journeyRect = journeySection.getBoundingClientRect();
 
-    // Check which section is currently in view
+    // Check if Hero section is in view (within 100px of top)
     if (heroRect.top >= -100 && heroRect.top <= 100) {
-      // Currently in Hero section, scroll to About
+      console.log('Currently in Hero - scrolling to About');
       scrollToAbout();
-    } else if (aboutRect.top >= -100 && aboutRect.top <= 100) {
-      // Currently in About section, scroll to Journey
+    }
+    // Check if About section is in view (within 100px of top)
+    else if (aboutRect.top >= -100 && aboutRect.top <= 100) {
+      console.log('Currently in About - scrolling to Journey');
       scrollToJourney();
-    } else if (journeyRect.top >= -100 && journeyRect.top <= 100) {
-      // Currently in Journey section, scroll back to Hero
-      scrollToHero();
-    } else {
-      // Default: scroll to About
+    }
+    // Default fallback - scroll to About
+    else {
+      console.log('Default - scrolling to About');
       scrollToAbout();
     }
   }
@@ -71,33 +56,7 @@ const scrollToNext = () => {
 // Provide the scroll functions to child components
 provide('scrollToAbout', scrollToAbout)
 provide('scrollToJourney', scrollToJourney)
-provide('scrollToHero', scrollToHero)
 provide('scrollToNext', scrollToNext)
-
-// Track current section on scroll
-onMounted(() => {
-  const handleScroll = () => {
-    const heroSection = document.getElementById('hero-section');
-    const aboutSection = document.getElementById('about-section');
-    const journeySection = document.getElementById('journey-section');
-
-    if (heroSection && aboutSection && journeySection) {
-      const heroRect = heroSection.getBoundingClientRect();
-      const aboutRect = aboutSection.getBoundingClientRect();
-      const journeyRect = journeySection.getBoundingClientRect();
-
-      if (heroRect.top >= -200 && heroRect.top <= 200) {
-        currentSection.value = 'hero';
-      } else if (aboutRect.top >= -200 && aboutRect.top <= 200) {
-        currentSection.value = 'about';
-      } else if (journeyRect.top >= -200 && journeyRect.top <= 200) {
-        currentSection.value = 'journey';
-      }
-    }
-  }
-
-  window.addEventListener('scroll', handleScroll);
-})
 </script>
 
 <template>
