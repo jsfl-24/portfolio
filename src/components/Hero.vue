@@ -8,7 +8,7 @@
         <div class="flex items-center justify-center h-full">
             <!--svg line   -->
             <section
-                class="absolute top-[90px] left-[-10px] md:left-[-10px] sm:left-[-20px] right-[1354px] md:block sm:hidden md:hidden">
+                class="absolute top-[90px] left-[-10px] md:left-[-10px] sm:left-[-20px] right-[1354px] md:block sm:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="502" viewBox="0 0 88 502" fill="none"
                     class="md:w-[88px] md:h-[502px] sm:w-[50px] sm:h-[300px]">
                     <path
