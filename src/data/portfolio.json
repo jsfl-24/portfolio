@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "name": "Jasfal",
+    "tagline": "Software Developer & Designer",
+    "description": "Exploring the intersection of web development and design. I craft digital experiences that are both functional and beautiful.",
+    "location": "Kerala, India",
+    "email": "jasfal2004@gmail.com",
+    "availableForWork": true
+  },
+  "social": [
+    { "label": "GitHub", "url": "https://github.com/jsfl-24", "icon": "github" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/in/jasfal", "icon": "linkedin" },
+    { "label": "Twitter", "url": "https://twitter.com/jasfal_", "icon": "twitter" },
+    { "label": "Instagram", "url": "https://instagram.com/jasfal_", "icon": "instagram" }
+  ],
+  "skills": [
+    { "category": "Frontend", "items": ["Vue.js", "React", "TypeScript", "Three.js", "GSAP"] },
+    { "category": "Backend", "items": ["Node.js", "Python", "PostgreSQL", "REST / GraphQL"] },
+    { "category": "Design", "items": ["Figma", "Affinity", "Adobe Creative Suite"] },
+    { "category": "Editing", "items": ["DaVinci Resolve", "Premiere Pro", "After Effects"] },
+    { "category": "Tools", "items": ["Git", "Docker", "Linux"] }
+  ],
+  "works": [
+    {
+      "id": 1,
+      "title": "Project Alpha",
+      "category": "Web Development",
+      "year": "2024",
+      "description": "A full-stack application built with Vue 3 and Node.js, featuring real-time collaboration.",
+      "technologies": ["Vue.js", "Node.js", "PostgreSQL"],
+      "link": "https://example.com",
+      "github": "https://github.com/yourusername/project-alpha",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "title": "Design System",
+      "category": "UI/UX Design",
+      "year": "2024",
+      "description": "A comprehensive design system built from scratch for a SaaS product.",
+      "technologies": ["Figma", "Storybook", "React"],
+      "link": "https://example.com",
+      "github": "",
+      "image": ""
+    },
+    {
+      "id": 3,
+      "title": "3D Experience",
+      "category": "Interactive",
+      "year": "2023",
+      "description": "An immersive 3D web experience using Three.js and GSAP animations.",
+      "technologies": ["Three.js", "GSAP", "Blender"],
+      "link": "https://example.com",
+      "github": "https://github.com/yourusername/3d-experience",
+      "image": ""
+    },
+    {
+      "id": 4,
+      "title": "Mobile App",
+      "category": "Mobile",
+      "year": "2023",
+      "description": "Cross-platform mobile application with a focus on smooth UX.",
+      "technologies": ["React Native", "TypeScript", "Firebase"],
+      "link": "https://example.com",
+      "github": "",
+      "image": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Senior Frontend Developer",
+      "company": "Company Name",
+      "period": "2023 — Present",
+      "description": "Leading the frontend architecture and development of enterprise-scale web applications."
+    },
+    {
+      "role": "Frontend Developer",
+      "company": "Agency Name",
+      "period": "2021 — 2023",
+      "description": "Designed and built award-winning websites for a diverse portfolio of clients."
+    }
+  ]
+}
