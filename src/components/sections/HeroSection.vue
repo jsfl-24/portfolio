@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import { gsap } from 'gsap'
 import portfolioData from '../../data/portfolio.json'
 
@@ -36,7 +37,7 @@ onMounted(() => {
 
       <!-- CTAs -->
       <div class="hero-ctas">
-        <a href="/works" class="hero-cta hero-cta--primary">View Works</a>
+        <RouterLink to="/works" class="hero-cta hero-cta--primary">View Works</RouterLink>
         <a :href="`mailto:${data.meta.email}`" class="hero-cta hero-cta--secondary">Say Hello →</a>
       </div>
     </div>

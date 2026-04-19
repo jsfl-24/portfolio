@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, useLink } from 'vue-router'
+import { RouterLink } from 'vue-router'
 import { useTheme } from '../composables/useTheme'
 import portfolioData from '../data/portfolio.json'
 
