@@ -1,83 +1,123 @@
 {
   "meta": {
     "name": "Jasfal",
-    "tagline": "Software Developer & Designer",
-    "description": "Exploring the intersection of web development and design. I craft digital experiences that are both functional and beautiful.",
+    "tagline": "Software Developer & Graphic Designer",
+    "description": "Crafting at the intersection of code and design. I build performant web experiences and create visual identities that leave a lasting impression.",
     "location": "Kerala, India",
     "email": "jasfal2004@gmail.com",
     "availableForWork": true
   },
   "social": [
-    { "label": "GitHub", "url": "https://github.com/jsfl-24", "icon": "github" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/in/jasfal", "icon": "linkedin" },
-    { "label": "Twitter", "url": "https://twitter.com/jasfal_", "icon": "twitter" },
-    { "label": "Instagram", "url": "https://instagram.com/jasfal_", "icon": "instagram" }
+    { "label": "GitHub",    "url": "https://github.com/jsfl-24",          "icon": "github"    },
+    { "label": "Behance",   "url": "https://www.behance.net/jasfal",       "icon": "behance"   },
+    { "label": "LinkedIn",  "url": "https://linkedin.com/in/jasfal",       "icon": "linkedin"  },
+    { "label": "Instagram", "url": "https://instagram.com/jasfal_",        "icon": "instagram" }
   ],
   "skills": [
     { "category": "Frontend", "items": ["Vue.js", "React", "TypeScript", "Three.js", "GSAP"] },
-    { "category": "Backend", "items": ["Node.js", "Python", "PostgreSQL", "REST / GraphQL"] },
-    { "category": "Design", "items": ["Figma", "Affinity", "Adobe Creative Suite"] },
-    { "category": "Editing", "items": ["DaVinci Resolve", "Premiere Pro", "After Effects"] },
-    { "category": "Tools", "items": ["Git", "Docker", "Linux"] }
+    { "category": "Backend",  "items": ["Node.js", "Python", "PostgreSQL", "REST / GraphQL"] },
+    { "category": "Design",   "items": ["Adobe Creative Suite", "Figma", "Affinity"] },
+    { "category": "Editing",  "items": ["DaVinci Resolve", "Premiere Pro", "After Effects"] },
+    { "category": "Tools",    "items": ["Git", "Docker", "Linux"] }
   ],
   "works": [
     {
       "id": 1,
-      "title": "Project Alpha",
-      "category": "Web Development",
-      "year": "2024",
-      "description": "A full-stack application built with Vue 3 and Node.js, featuring real-time collaboration.",
-      "technologies": ["Vue.js", "Node.js", "PostgreSQL"],
-      "link": "https://example.com",
-      "github": "https://github.com/yourusername/project-alpha",
-      "image": ""
+      "type": "design",
+      "title": "TakeDown",
+      "category": "Event Branding",
+      "year": "2025",
+      "description": "End-to-end branding for TakeDown, a 24-hour hackathon at Universal Engineering College — covering logo design, web design, and all promotional materials.",
+      "technologies": ["Figma", "Adobe Illustrator", "Photoshop"],
+      "link": "",
+      "github": "",
+      "behance": "https://www.behance.net/jasfal",
+      "image": "/images/works/takedown.jpg",
+      "clientLogo": "/images/works/takedown-logo.png"
     },
     {
       "id": 2,
-      "title": "Design System",
-      "category": "UI/UX Design",
+      "type": "development",
+      "title": "3D Experience",
+      "category": "Interactive Web",
       "year": "2024",
-      "description": "A comprehensive design system built from scratch for a SaaS product.",
-      "technologies": ["Figma", "Storybook", "React"],
+      "description": "An immersive 3D web experience using Three.js and GSAP scroll-driven animations.",
+      "technologies": ["Three.js", "GSAP", "TypeScript"],
       "link": "https://example.com",
-      "github": "",
-      "image": ""
+      "github": "https://github.com/jsfl-24/3d-experience",
+      "behance": "",
+      "image": "",
+      "clientLogo": ""
     },
     {
       "id": 3,
-      "title": "3D Experience",
-      "category": "Interactive",
-      "year": "2023",
-      "description": "An immersive 3D web experience using Three.js and GSAP animations.",
-      "technologies": ["Three.js", "GSAP", "Blender"],
-      "link": "https://example.com",
-      "github": "https://github.com/yourusername/3d-experience",
-      "image": ""
+      "type": "design",
+      "title": "Brand Identity",
+      "category": "Visual Identity",
+      "year": "2024",
+      "description": "Complete brand identity system for a tech startup — logomark, typography, colour palette, and brand guidelines document.",
+      "technologies": ["Adobe Illustrator", "Figma", "Affinity Publisher"],
+      "link": "",
+      "github": "",
+      "behance": "https://www.behance.net/jasfal",
+      "image": "",
+      "clientLogo": ""
     },
     {
       "id": 4,
-      "title": "Mobile App",
-      "category": "Mobile",
-      "year": "2023",
-      "description": "Cross-platform mobile application with a focus on smooth UX.",
-      "technologies": ["React Native", "TypeScript", "Firebase"],
+      "type": "development",
+      "title": "WorldQuant Foundry",
+      "category": "Web Development",
+      "year": "2024",
+      "description": "Pixel-perfect recreation of the WorldQuant Foundry site featuring a bento-box layout, canvas particle animations, and GSAP scroll-triggered reveals.",
+      "technologies": ["Vue.js", "GSAP", "Canvas API", "TypeScript"],
       "link": "https://example.com",
+      "github": "https://github.com/jsfl-24/wq-foundry",
+      "behance": "",
+      "image": "",
+      "clientLogo": ""
+    },
+    {
+      "id": 5,
+      "type": "design",
+      "title": "Motion Reel",
+      "category": "Motion Graphics",
+      "year": "2023",
+      "description": "A curated showreel of motion graphics and video editing work produced using DaVinci Resolve and After Effects.",
+      "technologies": ["After Effects", "DaVinci Resolve", "Premiere Pro"],
+      "link": "",
       "github": "",
-      "image": ""
+      "behance": "https://www.behance.net/jasfal",
+      "image": "",
+      "clientLogo": ""
+    },
+    {
+      "id": 6,
+      "type": "development",
+      "title": "Dev Portfolio",
+      "category": "Web Development",
+      "year": "2025",
+      "description": "This very portfolio — built with Vue 3, TypeScript, GSAP, and Lenis smooth scroll. Designed and developed from scratch.",
+      "technologies": ["Vue.js", "TypeScript", "GSAP", "Lenis"],
+      "link": "https://jsfl-24.github.io/portfolio",
+      "github": "https://github.com/jsfl-24/portfolio",
+      "behance": "",
+      "image": "",
+      "clientLogo": ""
     }
   ],
   "experience": [
     {
-      "role": "Senior Frontend Developer",
-      "company": "Company Name",
+      "role": "Freelance Designer & Developer",
+      "company": "Self-employed",
       "period": "2023 — Present",
-      "description": "Leading the frontend architecture and development of enterprise-scale web applications."
+      "description": "Delivering end-to-end branding, UI/UX design, and full-stack web development for clients across tech, events, and creative industries."
     },
     {
       "role": "Frontend Developer",
-      "company": "Agency Name",
-      "period": "2021 — 2023",
-      "description": "Designed and built award-winning websites for a diverse portfolio of clients."
+      "company": "Open-Source & Personal Projects",
+      "period": "2021 — Present",
+      "description": "Building interactive, performant web experiences with a focus on animation, design systems, and modern frontend tooling."
     }
   ]
 }

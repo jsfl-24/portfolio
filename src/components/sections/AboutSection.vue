@@ -1,35 +1,33 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import portfolioData from '../../data/portfolio.json'
+import { onMounted, ref } from "vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import portfolioData from "../../data/portfolio.json";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-const data = portfolioData
-const sectionRef = ref<HTMLElement | null>(null)
+const data = portfolioData;
+const sectionRef = ref<HTMLElement | null>(null);
 
 onMounted(() => {
-  if (!sectionRef.value) return
-  const items = sectionRef.value.querySelectorAll('.reveal')
+  if (!sectionRef.value) return;
+  const items = sectionRef.value.querySelectorAll(".reveal");
+  // Set initial state via GSAP so elements are visible if JS fails
+  items.forEach((el) => gsap.set(el, { opacity: 0, y: 40 }));
   items.forEach((el) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 88%',
-          toggleActions: 'play none none none',
-        },
-      }
-    )
-  })
-})
+    gsap.to(el, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 88%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+});
 </script>
 
 <template>
@@ -48,11 +46,18 @@ onMounted(() => {
           </div>
           <div class="detail-item">
             <span class="detail-label">Email</span>
-            <a :href="`mailto:${data.meta.email}`" class="detail-value detail-link">{{ data.meta.email }}</a>
+            <a
+              :href="`mailto:${data.meta.email}`"
+              class="detail-value detail-link"
+              >{{ data.meta.email }}</a
+            >
           </div>
           <div class="detail-item">
             <span class="detail-label">Status</span>
-            <span class="detail-value status-available" v-if="data.meta.availableForWork">
+            <span
+              class="detail-value status-available"
+              v-if="data.meta.availableForWork"
+            >
               <span class="status-dot" /> Available
             </span>
           </div>
@@ -69,7 +74,9 @@ onMounted(() => {
         >
           <h3 class="skill-category">{{ group.category }}</h3>
           <ul class="skill-list">
-            <li v-for="item in group.items" :key="item" class="skill-item">{{ item }}</li>
+            <li v-for="item in group.items" :key="item" class="skill-item">
+              {{ item }}
+            </li>
           </ul>
         </div>
       </div>
@@ -138,7 +145,9 @@ onMounted(() => {
 .detail-value {
   color: var(--text);
 }
-.detail-link:hover { opacity: 0.6; }
+.detail-link:hover {
+  opacity: 0.6;
+}
 
 .status-available {
   display: flex;
@@ -154,8 +163,13 @@ onMounted(() => {
   animation: pulse 2s infinite;
 }
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .skills-grid {
@@ -232,9 +246,56 @@ onMounted(() => {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
+  .detail-item {
+    flex-wrap: wrap;
+    gap: 0.4rem 0.8rem;
+  }
+
+  .detail-label {
+    width: auto;
+    min-width: 70px;
+  }
+
+  .detail-value {
+    overflow-wrap: anywhere;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+  }
   .experience-item {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 0.5rem;
+    padding: 1.75rem 0;
+  }
+  .exp-desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .experience-item {
+    padding: 1.4rem 0;
+  }
+
+  .exp-role {
+    font-size: 0.95rem;
+  }
+
+  .exp-company,
+  .exp-desc {
+    overflow-wrap: anywhere;
   }
 }
 </style>

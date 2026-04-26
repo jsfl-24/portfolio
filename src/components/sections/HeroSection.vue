@@ -1,20 +1,34 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { RouterLink } from 'vue-router'
-import { gsap } from 'gsap'
-import portfolioData from '../../data/portfolio.json'
+import { onMounted, ref } from "vue";
+import { RouterLink } from "vue-router";
+import { gsap } from "gsap";
+import portfolioData from "../../data/portfolio.json";
 
-const data = portfolioData
-const heroRef = ref<HTMLElement | null>(null)
+const data = portfolioData;
+const heroRef = ref<HTMLElement | null>(null);
 
 onMounted(() => {
-  if (!heroRef.value) return
-  const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
-  tl.fromTo('.hero-tag', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, delay: 0.3 })
-    .fromTo('.hero-title-line', { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 1.2, stagger: 0.15 }, '-=0.7')
-    .fromTo('.hero-sub', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1 }, '-=0.6')
-    .fromTo('.hero-cta', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 }, '-=0.5')
-})
+  if (!heroRef.value) return;
+  // Set initial states via GSAP so elements show if JS is slow
+  gsap.set(".hero-tag", { opacity: 0, y: 30 });
+  gsap.set(".hero-title-line", { opacity: 0, y: 80 });
+  gsap.set(".hero-sub", { opacity: 0, y: 30 });
+  gsap.set(".hero-cta", { opacity: 0, y: 20 });
+
+  const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+  tl.to(".hero-tag", { opacity: 1, y: 0, duration: 1, delay: 0.3 })
+    .to(
+      ".hero-title-line",
+      { opacity: 1, y: 0, duration: 1.2, stagger: 0.15 },
+      "-=0.7",
+    )
+    .to(".hero-sub", { opacity: 1, y: 0, duration: 1 }, "-=0.6")
+    .to(
+      ".hero-cta",
+      { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 },
+      "-=0.5",
+    );
+});
 </script>
 
 <template>
@@ -23,13 +37,19 @@ onMounted(() => {
       <!-- Tag  -->
       <div class="hero-tag">
         <span class="tag-dot" />
-        <span>{{ data.meta.availableForWork ? 'Available for work' : 'Currently unavailable' }}</span>
+        <span>{{
+          data.meta.availableForWork
+            ? "Available for work"
+            : "Currently unavailable"
+        }}</span>
       </div>
 
       <!-- Title -->
       <h1 class="hero-title">
-        <span class="hero-title-line">{{ data.meta.name.split(' ')[0] }}</span>
-        <span class="hero-title-line hero-title-line--italic">{{ data.meta.name.split(' ').slice(1).join(' ') }}</span>
+        <span class="hero-title-line">{{ data.meta.name.split(" ")[0] }}</span>
+        <span class="hero-title-line hero-title-line--italic">{{
+          data.meta.name.split(" ").slice(1).join(" ")
+        }}</span>
       </h1>
 
       <!-- Role -->
@@ -37,8 +57,14 @@ onMounted(() => {
 
       <!-- CTAs -->
       <div class="hero-ctas">
-        <RouterLink to="/works" class="hero-cta hero-cta--primary">View Works</RouterLink>
-        <a :href="`mailto:${data.meta.email}`" class="hero-cta hero-cta--secondary">Say Hello →</a>
+        <RouterLink to="/works" class="hero-cta hero-cta--primary"
+          >View Works</RouterLink
+        >
+        <a
+          :href="`mailto:${data.meta.email}`"
+          class="hero-cta hero-cta--secondary"
+          >Say Hello →</a
+        >
       </div>
     </div>
 
@@ -74,7 +100,6 @@ onMounted(() => {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-muted);
-  opacity: 0;
 }
 
 .tag-dot {
@@ -86,8 +111,15 @@ onMounted(() => {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.3); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
 }
 
 .hero-title {
@@ -103,7 +135,6 @@ onMounted(() => {
 
 .hero-title-line {
   display: block;
-  opacity: 0;
 }
 
 .hero-title-line--italic {
@@ -117,7 +148,6 @@ onMounted(() => {
   color: var(--text-muted);
   max-width: 460px;
   line-height: 1.8;
-  opacity: 0;
 }
 
 .hero-ctas {
@@ -130,7 +160,6 @@ onMounted(() => {
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0;
   transition: opacity 0.25s;
 }
 
@@ -138,7 +167,10 @@ onMounted(() => {
   padding: 0.75rem 2rem;
   border: 1px solid var(--border);
   border-radius: 2px;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
 .hero-cta--primary:hover {
   background: var(--text);
@@ -165,8 +197,56 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    min-height: calc(100vh - 58px);
+  }
+
   .hero-title {
-    font-size: clamp(3rem, 11vw, 5rem);
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
+  }
+
+  .hero-inner {
+    gap: 1.75rem;
+    padding-top: 2.5rem;
+  }
+
+  .hero-ctas {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+  }
+
+  .hero-location {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-tag {
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+    flex-wrap: wrap;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta--primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-cta--secondary {
+    width: fit-content;
+  }
+
+  .hero-sub {
+    line-height: 1.65;
   }
 }
 </style>

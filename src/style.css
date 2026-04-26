@@ -39,7 +39,21 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   transition: background-color 0.5s ease, color 0.5s ease;
-  cursor: none; /* hide default cursor */
+  cursor: none; /* hide default cursor — overridden on touch devices */
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+@media (pointer: coarse), (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+  a, button { cursor: pointer; }
 }
 
 /* ─── Scrollbar ──────────────────────────────────────── */
@@ -67,11 +81,12 @@ a {
   cursor: none;
 }
 
-/* ─── Utility: Reveal Animation ──────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
+@media (pointer: coarse), (max-width: 768px) {
+  a { cursor: pointer; }
 }
+
+/* ─── Utility: Reveal Animation ──────────────────────── */
+/* Initial states are set by GSAP, not CSS, to prevent invisible elements if JS fails */
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -151,6 +166,7 @@ html.light #cursor-ring.is-hovering {
   margin-left: var(--sidebar-width);
   flex: 1;
   min-width: 0;
+  width: 100%;
 }
 
 /* ─── Section ──────────────────────────────────────────── */
@@ -173,18 +189,28 @@ html.light #cursor-ring.is-hovering {
     --sidebar-width: 0px;
   }
 
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: sticky;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    flex-direction: row;
-    align-items: center;
-    padding: 1.25rem 1.5rem;
+  /* App layout stacks vertically on mobile */
+  #app-layout {
+    flex-direction: column;
   }
 
-  .sidebar-nav,
+  /* Sidebar becomes a top navbar */
+  .sidebar {
+    width: 100% !important;
+    height: auto !important;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 1rem 1.25rem !important;
+    z-index: 200;
+    background: var(--bg);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+  }
+
   .sidebar-social,
   .sidebar-footer {
     display: none;
@@ -195,10 +221,17 @@ html.light #cursor-ring.is-hovering {
   }
 
   .main-content {
-    margin-left: 0;
+    margin-left: 0 !important;
+    width: 100%;
+    overflow-x: hidden;
+    flex: 1;
   }
 
   .section {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .section-label {
+    margin-bottom: 1.75rem;
   }
 }
